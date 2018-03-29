@@ -1,9 +1,9 @@
-# 0.o
+# @carpo/utils
 
-## usgae
+## Usage
 
 ```js
-import install from '0.o'
+import install from 'yugo-utils'
 
 install()
 const { go, error, shouldWait } = Promise.ready<number>()
