@@ -1,4 +1,4 @@
-# @carpo/utils
+# yugo-utils
 
 ## Usage
 
