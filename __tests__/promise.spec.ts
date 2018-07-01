@@ -10,7 +10,7 @@ test('should ready function working', async () => {
   expect(shouldWait).resolves.toBe(number)
 })
 
-test('should install to Promise', async () => {
+test('should install to Promise ready', async () => {
   installPromise()
   const { go, error, shouldWait } = Promise.ready<number>()
   const number = 20
@@ -19,4 +19,13 @@ test('should install to Promise', async () => {
   }, 20)
   const value = await shouldWait
   expect(value).toBe(number)
+})
+
+test('should install to Promise pipe', async () => {
+  installPromise()
+  const start = Promise.resolve(20)
+  const addOne = num => num + 1
+  const addtwo = num => num + 2
+  const num = await Promise.pipe<number>(start, addOne, addtwo)
+  expect(num).toBe(23)
 })
